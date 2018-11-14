@@ -1,5 +1,10 @@
 public class WordWrapper {
     public String wrap(String text) {
-        return text.substring(0, 1) + "\n" + text.substring(1);
+        String wrappedText = new String();
+        for(int i = 0; i < text.length(); i++) {
+            wrappedText += text.substring(i, i+1) + "\n";
+        }
+
+        return wrappedText.substring(0, wrappedText.length() - 1);
     }
 }
