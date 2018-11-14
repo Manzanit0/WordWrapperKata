@@ -17,6 +17,16 @@ public class WordWrapperTest {
         Assert.assertEquals("Fo\nur", wrapText("Four", 2));
     }
 
+    @Test
+    public void wrapsSevenLettersWithAColumnSizeOfThree() {
+        Assert.assertEquals("123\n456\n7", wrapText("1234567", 3));
+    }
+
+    @Test
+    public void wrapsEightLettersWithAColumnSizeOfThree() {
+        Assert.assertEquals("123\n456\n78", wrapText("12345678", 3));
+    }
+
     private String wrapText(String text, int columnSize) {
         WordWrapper wrapper = new WordWrapper();
         return wrapper.wrap(text, columnSize);

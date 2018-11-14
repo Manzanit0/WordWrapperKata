@@ -6,6 +6,10 @@ public class WordWrapper {
             wrappedText += text.substring(i, i+columnSize > text.length() ? text.length() : i+columnSize) + "\n";
         }
 
-        return wrappedText.substring(0, wrappedText.length() - 1);
+        return trimLastCharacter(wrappedText);
+    }
+
+    private String trimLastCharacter(String text) {
+        return text.substring(0, text.length() - 1);
     }
 }
